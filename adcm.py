@@ -24,8 +24,14 @@ class ADCM_Task(object):
         self.cmds = cmds
     
     def exec(self):
-        for i in self.cmds:
-            os.system(i)
+        for cmd in self.cmds:
+            # if command is str, considered as system command
+            if isinstance(cmd, str):
+                os.system(cmd)
+            
+            # otherwise function call
+            else:
+                cmd()
 
 class ADCM_Trigger(object):
     def __init__(self, deps: list, tasks: list):
