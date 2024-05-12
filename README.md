@@ -31,6 +31,7 @@ Project-Dir/
 
 **workflow.py**
 ```python
+import os
 import adcm
 
 adcm.new_project("my-project")
