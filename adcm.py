@@ -175,7 +175,8 @@ def launch() -> None:
                     else:
                         col_num += 1
 
-                    print(index + " ", end="")
+                    print(index + " | ", end="")
+
                 print("") # enter to next line
 
             elif cmd == "trigger-list":
