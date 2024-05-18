@@ -26,7 +26,7 @@ Project-Dir/
 - **clangd** by LLVM
 - **CMake Language Support** by Jose Torres
 
-*NOTICE* don't install extensions **CMake** and **CMake Tools**.
+*NOTICE* please uninstall extensions **CMake** and **CMake Tools** in advance.
 
 
 **workflow.py**
@@ -49,7 +49,7 @@ adcm.add_task(
 )
 
 adcm.add_trigger(
-    "cmake-detector",
+    "auto-cmake-generate",
     ["CMakeLists.txt"],
     ["generate"]
 )
