@@ -167,6 +167,9 @@ def _adcm_launch() -> None:
 
         else:
             scmd = cmd.split(' ') # split input command
+            for i in range(0, len(scmd)):
+                scmd[i] = scmd[i].replace(" ", "")
+            
             if scmd[0] == "exit":
                 break
 
@@ -238,9 +241,9 @@ def _adcm_launch() -> None:
             # not built-in command, consider task
             else:
                 if scmd[0] in adcm_project_tasks:
-                    adcm_project_tasks[cmd].exec()
+                    adcm_project_tasks[scmd[0]].exec()
                 else:
-                    print("\033[1;32;31merror: task \"{0}\" is not existed!\033[m ".format(cmd))
+                    print("\033[1;32;31merror: task \"{0}\" is not existed!\033[m ".format(scmd[0]))
 
 
 """ launch the adcm manager """
